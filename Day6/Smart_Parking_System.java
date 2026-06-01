@@ -13,23 +13,21 @@ public class Smart_Parking_System {
         vehicle_number=v;
         hours_parked=h;
         vehicle_type=t;
-        if(vehicle_type=="Bike")
+        switch(vehicle_type)
         {
-            parking_fee = 10*hours_parked;
+            case "Bike":
+                parking_fee=hours_parked*10;
+                break;
+            case "Car":
+                parking_fee=hours_parked*30;
+                break;
+            case "Bus":
+                parking_fee=hours_parked*50;        
+                break;
+            default:
+                System.out.println("Invalid Vehicle Type");
         }
-        else if(vehicle_type=="Car")
-        {
-            parking_fee = 30*hours_parked;
-        }
-        else if(vehicle_type=="Bus")
-        {
-            parking_fee = 50*hours_parked;
 
-        }
-        else
-        {
-            parking_fee = 0;
-        }
         
     }  
     void display()
